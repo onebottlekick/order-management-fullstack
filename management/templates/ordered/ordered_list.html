@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if ordered_list %}
+    <ul>
+    {% for ordered in ordered_list %}
+        <li><a href="{{ url_for('ordered.detail', ordered_store_name=ordered.store_name) }}">{{ ordered.store_name }}</a></li>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>nothing ordered</p>
+{% endif %}
+<a href="{{ url_for('ordered.create') }}">Order!</a>
+
+{% endblock %}
