@@ -1,0 +1,25 @@
+<nav>
+    <a href="{{ url_for('main.index') }}">Order Management</a>
+    <button type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+    </button>
+    <div id="navbarNav">
+        {% if g.user %}
+        <ul>
+            <li>
+                <a href="{{ url_for('auth.logout') }}">{{ g.user.username }} (로그아웃)</a>
+            </li>
+        </ul>
+        {% else %}
+        <ul>
+            <li>
+                <a href="{{ url_for('auth.signup') }}">계정생성</a>
+            </li>
+            <li>
+                <a href="{{ url_for('auth.login') }}">로그인</a>
+            </li>
+        </ul>
+        {% endif %}
+    </div>
+</nav>
