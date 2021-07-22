@@ -6,7 +6,7 @@
 <div>
     {% for order in ordered %}
     <table>
-        <th>{{ order.id }}</th>
+        <th>{{ loop.index }}</th>
         <td>{{ order.order_list }}</td>
         <td>{{ order.ordered_date }}</td>
     </table>
